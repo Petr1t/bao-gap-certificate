@@ -1,0 +1,18 @@
+[project]
+name = "bao-gap-certificate"
+version = "0.1.0"
+description = "Fail-closed verifier for exact rational optimality-gap certificates of a radiotherapy beam-angle research model"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+    "h5py>=3.16",
+    "numpy>=2.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
