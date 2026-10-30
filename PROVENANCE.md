@@ -93,13 +93,12 @@ licence string. The CC-BY statement found in the article is the article's own
 Open Access notice and must not be assumed to govern the dataset. This is
 recorded as unverified rather than guessed, and is an open decision below.
 
-This repository's own code is under the MIT licence in `LICENSE`, whose
-copyright holder is still a placeholder.
+This repository's own code is under the MIT licence in `LICENSE`
+(copyright holder Petrit Isufi).
 
 ## Open decisions before publication
 
-1. **Copyright holder** in `LICENSE`: the placeholder `<COPYRIGHT HOLDER>`
-   must be replaced with a name or entity, and the year confirmed.
+1. **Copyright holder** in `LICENSE`: decided 30 October 2026, Petrit Isufi, 2026.
 2. **CORT dataset licence**: confirm the licence on the GigaDB landing page
    (DOI 10.5524/100110) from a rendered page before citing it anywhere, and
    before any CORT-derived fixture is ever added to this repository.
