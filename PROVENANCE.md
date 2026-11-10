@@ -1,17 +1,17 @@
 # Provenance
 
 This repository is an extract. Every file below either comes verbatim from an
-internal research repository, or was written for this extract. The source
-commit is the same for all extracted files:
+internal research repository, or was written for this extract. All extracted
+files come from the same commit of that repository; its identifier is not
+published, and the verifier is pinned by its SHA-256 instead:
 
 * source repository: internal research repository (private)
-* source commit: `fce0d286`
 * source subtree: `exploration/wetten/cpsat-zertifikate-strahlentherapie/` and `tests/`
 * extracted: 2026-09-21
 
 ## Extracted files
 
-| File here | Source path at `fce0d286` | Change |
+| File here | Source path | Change |
 |---|---|---|
 | `portpy_cohort_check.py` | `exploration/wetten/cpsat-zertifikate-strahlentherapie/laeufe/checker/portpy_cohort_check.py` | unchanged (byte-identical, SHA-256 `32ee9e6a1e01859abf79853b31a4a8c0593bc40490429a85a1f71dae36e70cd2`) |
 | `tests/test_portpy_cohort_check.py` | `tests/test_portpy_cohort_check.py` | decoupled, see below |
@@ -65,8 +65,9 @@ of any kind from the study.
   import no producer code, and the study's admission gate refuses to run
   without a separate independent review attestation (`review.json`, binding a
   clean commit, a review log and a positive JUnit report). **That attestation
-  is not part of this repository**, so this repository on its own does not
-  evidence that the review happened. Publishing it is an open decision below.
+  is internal and is not published**, so this repository on its own does not
+  evidence that the review happened. The claim made here is limited to what
+  can be checked from the code: it imports no producer code.
 * Parts of the upstream subtree carried a work-in-progress or unreviewed
   status at extraction time (a stage-1 pipeline on an unmerged branch, a
   per-patient report export merged without review). None of them is extracted
@@ -85,33 +86,16 @@ projects the research model relates to, for anyone reproducing the study.
 | Part | Licence | Primary source | Retrieved |
 |---|---|---|---|
 | PortPy (toolkit and dataset the study's source data comes from) | "Apache License, Version 2.0 with the Commons Clause restriction" (verbatim from `LICENSE.txt`); the GitHub API reports the repository licence as `NOASSERTION` | <https://raw.githubusercontent.com/PortPy-Project/PortPy/master/LICENSE.txt> | 2026-09-21 |
-| CORT dataset (Craft, Bangert, Long, Papp, Unkelbach, *Shared data for intensity modulated radiation therapy (IMRT) optimization research: the CORT dataset*, GigaScience 2014, 3:37) | the **article** is Open Access under CC-BY 4.0; the licence of the **dataset** (GigaDB, DOI 10.5524/100110) could not be read from its landing page — `[unverified]` | article: <https://academic.oup.com/gigascience/article/3/1/2047-217X-3-37/2682969>; dataset: <https://doi.org/10.5524/100110> | 2026-09-21 |
+| CORT dataset (Craft, Bangert, Long, Papp, Unkelbach, *Shared data for intensity modulated radiation therapy (IMRT) optimization research: the CORT dataset*, GigaScience 2014, 3:37) | the **article** is Open Access under CC-BY 4.0; the **dataset** (GigaDB, DOI 10.5524/100110) is under "Creative Commons Zero v1.0 Universal" (`cc0-1.0`), verbatim from its DataCite record | article: <https://academic.oup.com/gigascience/article/3/1/2047-217X-3-37/2682969>; dataset: <https://api.datacite.org/dois/10.5524/100110> | article 2026-09-21, dataset 2026-11-10 |
 
 The GigaDB landing page renders its metadata in JavaScript; neither
 `gigadb.org/dataset/100110` nor `gigadb.org/api/dataset/100110` returned a
-licence string. The CC-BY statement found in the article is the article's own
-Open Access notice and must not be assumed to govern the dataset. This is
-recorded as unverified rather than guessed, and is an open decision below.
+licence string. The DataCite record of the dataset DOI states the licence
+(see the table), and the article's own CC-BY notice governs the article only.
+
+PortPy's Commons Clause is not engaged by this repository: it contains no
+PortPy code and no PortPy data. The synthetic example is generated from
+scratch and carries no data from PortPy or from the study.
 
 This repository's own code is under the MIT licence in `LICENSE`
 (copyright holder Petrit Isufi).
-
-## Open decisions before publication
-
-1. **Copyright holder** in `LICENSE`: decided 30 October 2026, Petrit Isufi, 2026.
-2. **CORT dataset licence**: confirm the licence on the GigaDB landing page
-   (DOI 10.5524/100110) from a rendered page before citing it anywhere, and
-   before any CORT-derived fixture is ever added to this repository.
-3. **PortPy's Commons Clause**: this repository ships no PortPy code and no
-   PortPy data, so the restriction is not obviously engaged — but it is a
-   licensing judgement, not a technical one, and it should be made explicitly.
-4. **Publishing the review attestation**: decide whether the independent review
-   log and `review.json` for the verifier's commit may be published. Without
-   them the README cannot claim more than "written to import no producer code".
-5. **Naming the private source commit**: `fce0d286` identifies a commit in a
-   private repository. Decide whether that identifier may appear publicly.
-6. **Citation and author line**: the README currently cites no paper and names
-   no authors. Decide what to cite and under whose name to publish.
-7. **Scope**: decide whether the exhaustive enumerator that would turn the
-   certificate into a statement about all beam selections is to follow in a
-   later release, and say so in the README if it is.

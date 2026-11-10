@@ -134,3 +134,17 @@ built under a different model cannot be verified by accident.
 
 Python 3.12 or newer, `h5py` and `numpy` (see `pyproject.toml`). The verifier
 runs single-threaded and needs no solver, no network and no accelerator.
+
+## Citation
+
+The verifier accompanies the paper *A certificate for beam-angle selection:
+exact CORT benchmarks and certified template-gap bounds in a PortPy prostate
+cohort* by Petrit Isufi (preprint in preparation). The replication package,
+including the certificates of the cohort, is archived at Zenodo:
+
+> Petrit Isufi. Replication package: exact CORT beam-selection certificates and
+> certified template gaps in the PortPy prostate cohort. Zenodo, 2026.
+> <https://doi.org/10.5281/zenodo.24115899>
+
+The statistical analysis plan of the cohort study is registered at OSF:
+<https://doi.org/10.17605/OSF.IO/PUYAN>.
