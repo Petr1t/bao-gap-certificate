@@ -16,7 +16,7 @@ published, and the verifier is pinned by its SHA-256 instead:
 | `portpy_cohort_check.py` | `exploration/wetten/cpsat-zertifikate-strahlentherapie/laeufe/checker/portpy_cohort_check.py` | unchanged (byte-identical, SHA-256 `32ee9e6a1e01859abf79853b31a4a8c0593bc40490429a85a1f71dae36e70cd2`) |
 | `tests/test_portpy_cohort_check.py` | `tests/test_portpy_cohort_check.py` | decoupled, see below |
 
-Everything else (`README.md`, `PROVENANCE.md`, `AGENTS.md`, `LICENSE`,
+Everything else (`README.md`, `PROVENANCE.md`, `LICENSE`,
 `.gitignore`, `pyproject.toml`, `examples/build_synthetic_example.py`) was
 written for this repository.
 
